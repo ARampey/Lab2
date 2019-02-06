@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Rock-Paper-Scissors! \nPlease choose your weapon:"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/rockButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="rockButtonClicked"
+            android:text="Rock" />
+
+        <Button
+            android:id="@+id/paperButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="paperButtonClicked"
+            android:text="Paper" />
+
+        <Button
+            android:id="@+id/scissorsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="scissorsButtonClicked"
+            android:text="Scissors" />
+
+        <TextView
+            android:id="@+id/scoreboardText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/playerWeaponText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/computerWeaponText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/roundResultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/weaponResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
