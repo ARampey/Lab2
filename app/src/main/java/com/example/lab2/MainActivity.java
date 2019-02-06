@@ -50,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
         compChoice();
         decideWinner();
 
-        updateComputerWeaponTextView();
-        updatePlayerWeaponTextView();
-        updateRoundResultTextView();
         updateScoreTextView();
+        updateComputerWeaponText();
+        updatePlayerWeaponText();
+        updateRoundResultText();
+
 
 
     }
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         //draw
 
         if (userWeapon == computerWeapon) {
-            roundResult = "It's a draw...";
+            roundResult = "It's a draw... ";
             weaponResult = "";
         }
 
@@ -96,12 +97,12 @@ public class MainActivity extends AppCompatActivity {
         if (userWeapon == Weapon.ROCK) {
             if (computerWeapon == Weapon.SCISSORS) {
                 computerLives--;
-                roundResult = "Player wins...";
+                roundResult = "Player wins... ";
                 weaponResult = "Rock blunts scissors!";
 
             } else if (computerWeapon == Weapon.PAPER) {
                 playerLives--;
-                roundResult = "Computer wins...";
+                roundResult = "Computer wins... ";
                 weaponResult = "Paper covers rock!";
             }
         }
@@ -110,12 +111,12 @@ public class MainActivity extends AppCompatActivity {
         if (userWeapon == Weapon.PAPER) {
             if (computerWeapon == Weapon.ROCK) {
                 computerLives--;
-                roundResult = "Player wins...";
+                roundResult = "Player wins... ";
                 weaponResult = "Paper covers rock!";
 
             } else if (computerWeapon == Weapon.SCISSORS) {
                 playerLives--;
-                roundResult = "Computer wins...";
+                roundResult = "Computer wins... ";
                 weaponResult = "Scissors cuts paper!";
 
             }
@@ -126,12 +127,12 @@ public class MainActivity extends AppCompatActivity {
         if (userWeapon == Weapon.SCISSORS) {
             if (computerWeapon == Weapon.PAPER) {
                 computerLives--;
-                roundResult = "Player wins...";
+                roundResult = "Player wins... ";
                 weaponResult = "Scissors cuts paper!";
 
             } else if (computerWeapon == Weapon.ROCK) {
                 playerLives--;
-                roundResult = "Computer wins...";
+                roundResult = "Computer wins... ";
                 weaponResult = "Rock blunts scissors!";
 
             }
@@ -191,33 +192,33 @@ public class MainActivity extends AppCompatActivity {
 
     // display correct text views
 
-
-    private void updatePlayerWeaponTextView() {
-        TextView playerTextView = findViewById(R.id.playerWeaponText);
-        String playerString = "Player's Weapon: " + userWeapon;
-        playerTextView.setText(playerString);
-    }
-
-    private void updateComputerWeaponTextView() {
-        TextView computerTextView = findViewById(R.id.computerWeaponText);
-        String computerString = "Computer's Weapon: " + computerWeapon;
-        computerTextView.setText(computerString);
-    }
-
-    private void updateRoundResultTextView() {
-        TextView resultTextView = findViewById(R.id.roundResultText);
-        String resultString = roundResult + " " + weaponResult;
-        resultTextView.setText(resultString);
-    }
-
     private void updateScoreTextView() {
-        TextView scoreTextView = (TextView) findViewById(R.id.scoreboardText);
-        String scoreString = "Player: " + playerLives + ", " + "Computer: " + computerLives;
+        TextView scoreTextView = findViewById(R.id.scoreboardText);
+        String scoreString = "Player: " + playerLives + ". " + "Computer: " + computerLives;
         scoreTextView.setText(scoreString);
 
     }
 
 
+    private void updatePlayerWeaponText() {
+        TextView playerTextView = findViewById(R.id.playerWeaponText);
+        String playerWeaponText = "Player's Weapon: " + userWeapon;
+        playerTextView.setText(playerWeaponText);
+    }
+
+
+    private void updateComputerWeaponText() {
+        TextView computerTextView = findViewById(R.id.computerWeaponText);
+        String computerString = "Computer's Weapon: " + computerWeapon;
+        computerTextView.setText(computerString);
+    }
+
+
+    private void updateRoundResultText() {
+        TextView resultTextView = findViewById(R.id.roundResultText);
+        String resultString = roundResult + "" + weaponResult;
+        resultTextView.setText(resultString);
+    }
 
 
 
